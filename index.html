@@ -20,6 +20,7 @@ font-family:'Segoe UI', Arial, sans-serif;
 color:#f5f5f5;
 overflow-x:hidden;
 background: radial-gradient(circle at top, #2a0018 0%, #0a0005 70%);
+position: relative;
 }
 
 /* PARTÍCULAS GERAIS */
@@ -41,23 +42,52 @@ from{transform:translateY(0);}
 to{transform:translateY(-120px);}
 }
 
+/* GLITTER CAINDO */
+.glitter-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index:0;
+  overflow: hidden;
+}
+
+.glitter {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: linear-gradient(white, pink);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: glitterFall linear infinite;
+}
+
+@keyframes glitterFall {
+  0% { transform: translateY(-10px) translateX(0); opacity: 1; }
+  100% { transform: translateY(110vh) translateX(30px); opacity: 0; }
+}
+
 /* CONTAINER */
 .container{
 max-width:1200px;
 margin:auto;
 padding:40px 20px;
 text-align:center;
+z-index:2;
+position: relative;
 }
 
 /* TOPO COM LOGO DESTACADA */
 .logo-container{
 position:relative;
-padding-top:1000px;
-padding-bottom:50px;
+padding-top:60px;
+padding-bottom:60px;
 }
 
 .logo-big{
-width:1000px; /* maior destaque */
+width:600px; /* maior destaque */
 max-width:90%;
 animation:logoFadeIn 1.8s ease forwards, logoGlow 2.5s infinite alternate;
 opacity:0;
@@ -68,10 +98,10 @@ margin:0 auto 20px auto;
 }
 
 .personal-trainer{
-font-size:80px;
-font-weight:600;
+font-size:24px;
+font-weight:900;
 color:#ff4da6;
-margin-bottom:40px;
+margin-bottom:60px;
 animation:logoTextFadeIn 2s ease forwards;
 opacity:0;
 text-shadow:0 0 15px rgba(255,0,128,0.7);
@@ -79,47 +109,18 @@ text-align:center;
 z-index:2;
 }
 
-.logo-container::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-radial-gradient(rgba(255,0,128,0.05) 1px, transparent 1px);
-background-size:80px 80px, 150px 150px;
-animation:particlesLogo 30s linear infinite;
-pointer-events:none;
-z-index:1;
-}
-
-@keyframes particlesLogo{
-from{transform:translateY(0);}
-to{transform:translateY(-150px);}
-}
-
-@keyframes logoFadeIn{
-0%{opacity:0; transform:scale(0.7);}
-100%{opacity:1; transform:scale(1);}
-}
-
-@keyframes logoGlow{
-0%{filter:drop-shadow(0 0 15px rgba(255,0,128,0.6));}
-50%{filter:drop-shadow(0 0 45px rgba(255,0,128,1));}
-100%{filter:drop-shadow(0 0 15px rgba(255,0,128,0.6));}
-}
-
-@keyframes logoTextFadeIn{
-0%{opacity:0; transform:translateY(10px);}
-100%{opacity:1; transform:translateY(0);}
+/* SLOGAN */
+.slogan{
+font-size:18px;
+font-weight:600;
+color:#ff4da6;
+margin-bottom:40px;
 }
 
 /* HERO CINEMATOGRÁFICO */
 .animated-hero{
 opacity:0;
-transform:translateY(40px);
+transform:translateY(50px);
 animation:heroEnter 1.5s ease forwards 2.2s; /* entra depois da logo */
 }
 
@@ -130,8 +131,8 @@ animation:heroEnter 1.5s ease forwards 2.2s; /* entra depois da logo */
 
 /* HERO */
 .hero h1{
-font-size:46px;
-font-weight:300;
+font-size:30px;
+font-weight:100;
 line-height:1.3;
 }
 
@@ -435,6 +436,7 @@ text-decoration:none;
 <div class="logo-container">
 <img src="Raquel.png" class="logo-big" alt="Raquel Frisson">
 <p class="personal-trainer">PERSONAL TRAINER</p>
+<p class="slogan">Foco em Resultados: transformando suor em conquistas e disciplina em liberdade.</p>
 </div>
 
 <!-- HERO -->
@@ -442,11 +444,11 @@ text-decoration:none;
 <h1>Recupere seu corpo e sua <span>confiança</span> com estratégia.</h1>
 
 <p>
-Sem achismo. Sem perder tempo.<br>
-Apenas o que realmente funciona.
+Emagrecimento ou hipertrofia.<br>
+Treinos inteligentes para resultados reais em Duque de Caxias.
 </p>
 
-<a href="https://wa.me/5521979259432" class="btn">Começar agora</a>
+<a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
 <p class="sub-info">Atendimento personalizado • Vagas limitadas</p>
 </div>
 
@@ -487,7 +489,7 @@ Apenas o que realmente funciona.
 <li>✔ Ajustes conforme evolução</li>
 <li>✔ Suporte</li>
 </ul>
-<a href="https://wa.me/5521979259432" class="btn">Começar agora</a>
+<a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
 </div>
 
 <div class="plan highlight">
@@ -499,7 +501,7 @@ Apenas o que realmente funciona.
 <li>✔ Ajustes frequentes</li>
 <li>✔ Acompanhamento mais próximo</li>
 </ul>
-<a href="https://wa.me/5521979259432" class="btn">Começar agora</a>
+<a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
 </div>
 
 <div class="plan">
@@ -510,7 +512,7 @@ Apenas o que realmente funciona.
 <li>✔ Atualizações periódicas</li>
 <li>✔ Suporte online</li>
 </ul>
-<a href="https://wa.me/5521979259432" class="btn">Começar agora</a>
+<a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
 </div>
 
 </div>
@@ -523,14 +525,30 @@ Apenas o que realmente funciona.
 Os resultados começam na decisão.<br>
 E você já sabe o que precisa fazer.
 </p>
-<a href="https://wa.me/5521979259432" class="btn">
+<a href="https://wa.me/5521994853154" class="btn">
 Quero começar agora
 </a>
 </div>
 
 </div>
 
-<a href="https://wa.me/5521979259432" class="whatsapp">💬</a>
+<!-- GLITTER -->
+<div class="glitter-container"></div>
+
+<a href="https://wa.me/5521994853154" class="whatsapp">💬</a>
+
+<script>
+// Cria 100 partículas de glitter
+const glitterContainer = document.querySelector('.glitter-container');
+for(let i = 0; i < 100; i++){
+  const g = document.createElement('div');
+  g.classList.add('glitter');
+  g.style.left = Math.random() * 100 + 'vw';
+  g.style.animationDuration = (5 + Math.random() * 5) + 's';
+  g.style.width = g.style.height = (2 + Math.random() * 3) + 'px';
+  glitterContainer.appendChild(g);
+}
+</script>
 
 </body>
-  </html>gvg
+  </html>
