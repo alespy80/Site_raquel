@@ -49,10 +49,36 @@ padding:40px 20px;
 text-align:center;
 }
 
+/* LOGO CONTAINER */
+.logo-container{
+  text-align:center;
+  margin-bottom:60px;
+  position:relative;
+}
+
 /* LOGO */
 .logo{
-width:160px;
-margin-bottom:40px;
+  width:220px;
+  max-width:90%;
+  margin-bottom:15px;
+  filter: drop-shadow(0 0 20px rgba(255,0,128,0.6));
+  transition:0.3s;
+}
+
+.logo:hover{
+  transform:scale(1.05);
+  filter: drop-shadow(0 0 30px rgba(255,0,128,0.9));
+}
+
+/* PERSONAL TRAINER */
+.personal-trainer{
+  font-size:18px;
+  letter-spacing:2px;
+  font-weight:600;
+  color:#ff4da6;
+  text-transform:uppercase;
+  text-shadow:0 0 10px rgba(255,0,128,0.7);
+  margin-top:0;
 }
 
 /* HERO */
@@ -78,7 +104,6 @@ color:#cfcfcf;
 line-height:1.6;
 }
 
-/* BOTÃO */
 .btn{
 display:inline-block;
 margin-top:35px;
@@ -96,15 +121,13 @@ transform:translateY(-2px) scale(1.05);
 box-shadow:0 0 25px rgba(255,0,128,0.6);
 }
 
-/* SUB INFO */
 .sub-info{
 margin-top:15px;
 font-size:14px;
 color:#888;
 }
 
-/* ===== BENEFÍCIOS ===== */
-
+/* BENEFÍCIOS */
 .cards{
 position:relative;
 display:flex;
@@ -199,8 +222,7 @@ color:#bbb;
 font-size:15px;
 }
 
-/* ===== PLANOS COM GLOW TOTAL ===== */
-
+/* PLANOS COM GLOW */
 .planos{
 margin-top:130px;
 }
@@ -226,11 +248,7 @@ width:300px;
 border:1px solid rgba(255,255,255,0.05);
 transition:0.4s;
 overflow:hidden;
-
-/* GLOW CONSTANTE */
-box-shadow:
-0 0 15px rgba(255,0,128,0.15),
-0 0 30px rgba(255,0,128,0.08);
+box-shadow:0 0 15px rgba(255,0,128,0.15),0 0 30px rgba(255,0,128,0.08);
 }
 
 .plan::before{
@@ -261,16 +279,12 @@ opacity:1;
 
 .plan:hover{
 transform:translateY(-10px) scale(1.04);
-box-shadow:
-0 0 30px rgba(255,0,128,0.4),
-0 0 60px rgba(255,0,128,0.2);
+box-shadow:0 0 30px rgba(255,0,128,0.4),0 0 60px rgba(255,0,128,0.2);
 }
 
 .highlight{
 border:2px solid #ff4da6;
-box-shadow:
-0 0 25px rgba(255,0,128,0.4),
-0 0 60px rgba(255,0,128,0.25);
+box-shadow:0 0 25px rgba(255,0,128,0.4),0 0 60px rgba(255,0,128,0.25);
 }
 
 .price{
@@ -295,8 +309,7 @@ color:#ff4da6;
 font-size:14px;
 }
 
-/* ===== FINAL PREMIUM ===== */
-
+/* FINAL PREMIUM */
 .final{
 position:relative;
 margin-top:150px;
@@ -367,10 +380,11 @@ text-decoration:none;
 
 <div class="container">
 
-<img src="Raquel.png" class="logo">
-
-<p>PERSONAL TRAINER
-</p>
+<!-- LOGO -->
+<div class="logo-container">
+  <img src="Raquel.png" class="logo" alt="Raquel Frisson">
+  <p class="personal-trainer">PERSONAL TRAINER</p>
+</div>
 
 <!-- HERO -->
 <div class="hero">
