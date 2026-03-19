@@ -22,7 +22,7 @@ overflow-x:hidden;
 background: radial-gradient(circle at top, #2a0018 0%, #0a0005 70%);
 }
 
-/* PARTÍCULAS */
+/* PARTÍCULAS GERAIS */
 body::before{
 content:"";
 position:fixed;
@@ -49,43 +49,86 @@ padding:40px 20px;
 text-align:center;
 }
 
-/* LOGO CONTAINER */
+/* TOPO COM LOGO DESTACADA */
 .logo-container{
-  text-align:center;
-  margin-bottom:60px;
-  position:relative;
+position:relative;
+padding-top:60px;
+padding-bottom:60px;
 }
 
-/* LOGO */
-.logo{
-  width:220px;
-  max-width:90%;
-  margin-bottom:15px;
-  filter: drop-shadow(0 0 20px rgba(255,0,128,0.6));
-  transition:0.3s;
+.logo-big{
+width:300px; /* maior destaque */
+max-width:90%;
+animation:logoFadeIn 1.8s ease forwards, logoGlow 2.5s infinite alternate;
+opacity:0;
+position:relative;
+z-index:2;
+display:block;
+margin:0 auto 20px auto;
 }
 
-.logo:hover{
-  transform:scale(1.05);
-  filter: drop-shadow(0 0 30px rgba(255,0,128,0.9));
-}
-
-/* PERSONAL TRAINER */
 .personal-trainer{
-  font-size:18px;
-  letter-spacing:2px;
-  font-weight:600;
-  color:#ff4da6;
-  text-transform:uppercase;
-  text-shadow:0 0 10px rgba(255,0,128,0.7);
-  margin-top:0;
+font-size:24px;
+font-weight:600;
+color:#ff4da6;
+margin-bottom:40px;
+animation:logoTextFadeIn 2s ease forwards;
+opacity:0;
+text-shadow:0 0 15px rgba(255,0,128,0.7);
+text-align:center;
+z-index:2;
+}
+
+.logo-container::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+radial-gradient(rgba(255,0,128,0.05) 1px, transparent 1px);
+background-size:60px 60px, 120px 120px;
+animation:particlesLogo 30s linear infinite;
+pointer-events:none;
+z-index:1;
+}
+
+@keyframes particlesLogo{
+from{transform:translateY(0);}
+to{transform:translateY(-150px);}
+}
+
+@keyframes logoFadeIn{
+0%{opacity:0; transform:scale(0.7);}
+100%{opacity:1; transform:scale(1);}
+}
+
+@keyframes logoGlow{
+0%{filter:drop-shadow(0 0 15px rgba(255,0,128,0.6));}
+50%{filter:drop-shadow(0 0 45px rgba(255,0,128,1));}
+100%{filter:drop-shadow(0 0 15px rgba(255,0,128,0.6));}
+}
+
+@keyframes logoTextFadeIn{
+0%{opacity:0; transform:translateY(10px);}
+100%{opacity:1; transform:translateY(0);}
+}
+
+/* HERO CINEMATOGRÁFICO */
+.animated-hero{
+opacity:0;
+transform:translateY(40px);
+animation:heroEnter 1.5s ease forwards 2.2s; /* entra depois da logo */
+}
+
+@keyframes heroEnter{
+0%{opacity:0; transform:translateY(40px);}
+100%{opacity:1; transform:translateY(0);}
 }
 
 /* HERO */
-.hero{
-margin-bottom:100px;
-}
-
 .hero h1{
 font-size:46px;
 font-weight:300;
@@ -104,6 +147,7 @@ color:#cfcfcf;
 line-height:1.6;
 }
 
+/* BOTÃO */
 .btn{
 display:inline-block;
 margin-top:35px;
@@ -121,13 +165,14 @@ transform:translateY(-2px) scale(1.05);
 box-shadow:0 0 25px rgba(255,0,128,0.6);
 }
 
+/* SUB INFO */
 .sub-info{
 margin-top:15px;
 font-size:14px;
 color:#888;
 }
 
-/* BENEFÍCIOS */
+/* ===== BENEFÍCIOS ===== */
 .cards{
 position:relative;
 display:flex;
@@ -222,7 +267,7 @@ color:#bbb;
 font-size:15px;
 }
 
-/* PLANOS COM GLOW */
+/* ===== PLANOS COM GLOW ===== */
 .planos{
 margin-top:130px;
 }
@@ -248,7 +293,9 @@ width:300px;
 border:1px solid rgba(255,255,255,0.05);
 transition:0.4s;
 overflow:hidden;
-box-shadow:0 0 15px rgba(255,0,128,0.15),0 0 30px rgba(255,0,128,0.08);
+box-shadow:
+0 0 15px rgba(255,0,128,0.15),
+0 0 30px rgba(255,0,128,0.08);
 }
 
 .plan::before{
@@ -279,12 +326,16 @@ opacity:1;
 
 .plan:hover{
 transform:translateY(-10px) scale(1.04);
-box-shadow:0 0 30px rgba(255,0,128,0.4),0 0 60px rgba(255,0,128,0.2);
+box-shadow:
+0 0 30px rgba(255,0,128,0.4),
+0 0 60px rgba(255,0,128,0.2);
 }
 
 .highlight{
 border:2px solid #ff4da6;
-box-shadow:0 0 25px rgba(255,0,128,0.4),0 0 60px rgba(255,0,128,0.25);
+box-shadow:
+0 0 25px rgba(255,0,128,0.4),
+0 0 60px rgba(255,0,128,0.25);
 }
 
 .price{
@@ -309,7 +360,7 @@ color:#ff4da6;
 font-size:14px;
 }
 
-/* FINAL PREMIUM */
+/* ===== FINAL PREMIUM ===== */
 .final{
 position:relative;
 margin-top:150px;
@@ -380,14 +431,14 @@ text-decoration:none;
 
 <div class="container">
 
-<!-- LOGO -->
+<!-- LOGO DESTACADA -->
 <div class="logo-container">
-  <img src="Raquel.png" class="logo" alt="Raquel Frisson">
-  <p class="personal-trainer">PERSONAL TRAINER</p>
+<img src="Raquel.png" class="logo-big" alt="Raquel Frisson">
+<p class="personal-trainer">PERSONAL TRAINER</p>
 </div>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero animated-hero">
 <h1>Recupere seu corpo e sua <span>confiança</span> com estratégia.</h1>
 
 <p>
@@ -482,4 +533,4 @@ Quero começar agora
 <a href="https://wa.me/5521979259432" class="whatsapp">💬</a>
 
 </body>
-</html>
+  </html>gvg
