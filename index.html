@@ -28,7 +28,6 @@ body::before{
   z-index:-1;
   opacity:0.6;
 }
-}
 @keyframes particles{
   from{transform:translateY(0);}
   to{transform:translateY(-120px);}
@@ -42,7 +41,7 @@ body::before{
   text-align:center;
 }
 
-/* LOGO CONTAINER AJUSTADO */
+/* LOGO CONTAINER */
 .logo-container{
   position: relative;
   padding-top: 30px;
@@ -53,15 +52,14 @@ body::before{
 
 .logo-big{
   width:100%;
-  max-width:750px; /* AQUI está o tamanho ideal */
+  max-width:750px;
   animation:logoFadeIn 1.8s ease forwards, logoGlow 2.5s infinite alternate;
   opacity:1;
   margin:0 auto 10px auto;
   display:block;
-  }
+}
 
-
-/* PERSONAL TRAINER AJUSTADO */
+/* PERSONAL TRAINER */
 .personal-trainer{
   font-size:22px;
   font-weight:700;
@@ -85,7 +83,7 @@ body::before{
 .animated-hero{
   opacity:0;
   transform:translateY(50px);
-  margin-top:20px; /* alterado */
+  margin-top:20px;
   animation:heroEnter 1.5s ease forwards 2.2s;
 }
 @keyframes heroEnter{
@@ -121,6 +119,8 @@ body::before{
   text-decoration:none;
   color:white;
   transition:0.3s;
+  position: relative;
+  z-index:10;
 }
 .btn:hover{
   transform:translateY(-2px) scale(1.05);
@@ -332,14 +332,13 @@ body::before{
 
 <div class="logo-container">
   <img src="file_000000008e7c71f58da6ed9ebadc5cb2.png" class="logo-big" alt="Raquel Frisson">
-
   <p class="slogan">Foco em Resultados: transformando suor em conquistas e disciplina em liberdade.</p>
 </div>
 
 <div class="hero animated-hero">
   <h1>Recupere seu corpo e sua <span>confiança</span> com estratégia.</h1>
   <p>Emagrecimento ou hipertrofia.<br>Treinos inteligentes para resultados reais.</p>
-  <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
+  <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%203x%20por%20semana" class="btn">Começar agora</a>
   <p class="sub-info">Atendimento personalizado • Vagas limitadas</p>
 </div>
 
@@ -352,17 +351,36 @@ body::before{
 <div class="planos">
   <h2>Escolha seu plano</h2>
   <div class="plans">
-    <div class="plan"><h3>3x por semana</h3><div class="price">R$450/mês</div>
-      <ul><li>✔ Treino personalizado</li><li>✔ Ajustes conforme evolução</li><li>✔ Suporte</li></ul>
-      <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
+    <div class="plan">
+      <h3>3x por semana</h3>
+      <div class="price">R$450/mês</div>
+      <ul>
+        <li>✔ Treino personalizado</li>
+        <li>✔ Ajustes conforme evolução</li>
+        <li>✔ Suporte</li>
+      </ul>
+      <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%203x%20por%20semana" class="btn">Começar agora</a>
     </div>
-    <div class="plan highlight"><h3>5x por semana</h3><p class="tag">Mais escolhido</p><div class="price">R$600/mês</div>
-      <ul><li>✔ Treino avançado</li><li>✔ Ajustes frequentes</li><li>✔ Acompanhamento mais próximo</li></ul>
-      <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
+    <div class="plan highlight">
+      <h3>5x por semana</h3>
+      <p class="tag">Mais escolhido</p>
+      <div class="price">R$600/mês</div>
+      <ul>
+        <li>✔ Treino avançado</li>
+        <li>✔ Ajustes frequentes</li>
+        <li>✔ Acompanhamento mais próximo</li>
+      </ul>
+      <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%205x%20por%20semana" class="btn">Começar agora</a>
     </div>
-    <div class="plan"><h3>Consultoria Online</h3><div class="price">R$197/mês</div>
-      <ul><li>✔ Treino personalizado</li><li>✔ Atualizações periódicas</li><li>✔ Suporte online</li></ul>
-      <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
+    <div class="plan">
+      <h3>Consultoria Online</h3>
+      <div class="price">R$197/mês</div>
+      <ul>
+        <li>✔ Treino personalizado</li>
+        <li>✔ Atualizações periódicas</li>
+        <li>✔ Suporte online</li>
+      </ul>
+      <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%20Consultoria%20Online" class="btn">Começar agora</a>
     </div>
   </div>
 </div>
@@ -378,4 +396,4 @@ body::before{
 <a href="https://wa.me/5521994853154" class="whatsapp">💬</a>
 
 </body>
-</html>
+  </html>
