@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raquel Frisson</title>
+
 <style>
+
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
   font-family:'Segoe UI', Arial, sans-serif;
   color:#f5f5f5;
@@ -14,7 +17,7 @@ body{
   background: radial-gradient(circle at top, #2a0018 0%, #0a0005 70%);
 }
 
-/* PARTÍCULAS/GLITTER */
+/* PARTÍCULAS */
 body::before{
   content:"";
   position:fixed;
@@ -24,7 +27,7 @@ body::before{
     radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
     radial-gradient(rgba(255,0,128,0.05) 1px, transparent 1px);
   background-size:140px 140px, 200px 200px;
-  animation:particles 60s linear infinite;
+  animation:particles 25s linear infinite;
   z-index:-1;
 }
 @keyframes particles{
@@ -40,36 +43,23 @@ body::before{
   text-align:center;
 }
 
-/* LOGO CONTAINER AJUSTADO */
+/* TOPO AJUSTADO */
 .logo-container{
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding-top: 60px;
+  padding-bottom: 80px;
   text-align: center;
   z-index:2;
 }
 
-/* LOGO EM DESTAQUE */
+/* LOGO */
 .logo-big{
-  width:1000px;
-  max-width:90%;
-  animation:logoFadeIn 1.8s ease forwards, logoGlow 2.5s infinite alternate;
+  width:1200px;
+  max-width:95%;
+  animation:logoFadeIn 0.6s ease forwards, logoGlow 1.2s infinite alternate;
   opacity:1;
-  margin:0 auto 15px auto;
+  margin:0 auto 30px auto;
   display:block;
-  position: relative;
-}
-
-/* PERSONAL TRAINER AJUSTADO */
-.personal-trainer{
-  font-size:22px;
-  font-weight:700;
-  color:#ff77b3;
-  margin-bottom:20px;
-  text-shadow: 0 0 10px rgba(255,77,166,0.7);
-  letter-spacing: 2px;
-  text-align: center;
-  z-index:2;
 }
 
 /* SLOGAN */
@@ -77,21 +67,23 @@ body::before{
   font-size:18px;
   font-weight:600;
   color:#ff4da6;
-  margin-bottom:40px;
+  margin-bottom:70px;
 }
 
-/* HERO CINEMATOGRÁFICO */
+/* HERO */
 .animated-hero{
   opacity:0;
   transform:translateY(50px);
-  animation:heroEnter 1.5s ease forwards 2.2s;
+  animation:heroEnter 0.6s ease forwards 0.4s;
+  margin-top:40px;
 }
+
 @keyframes heroEnter{
   0%{opacity:0; transform:translateY(40px);}
   100%{opacity:1; transform:translateY(0);}
 }
 
-/* HERO */
+/* TEXTO HERO */
 .hero h1{
   font-size:30px;
   font-weight:100;
@@ -125,14 +117,13 @@ body::before{
   box-shadow:0 0 25px rgba(255,0,128,0.6);
 }
 
-/* SUB INFO */
 .sub-info{
   margin-top:15px;
   font-size:14px;
   color:#888;
 }
 
-/* BENEFÍCIOS */
+/* CARDS */
 .cards{
   position:relative;
   display:flex;
@@ -141,177 +132,79 @@ body::before{
   flex-wrap:wrap;
   justify-content:center;
 }
-.cards::before{
-  content:"";
-  position:absolute;
-  top:50%;
-  left:10%;
-  width:80%;
-  height:2px;
-  background:linear-gradient(90deg, transparent, #ff2e93, transparent);
-  opacity:0.3;
-}
+
 .card{
   position:relative;
   background:rgba(15, 0, 10, 0.7);
   padding:35px 25px;
   border-radius:20px;
   width:280px;
-  overflow:hidden;
   backdrop-filter: blur(10px);
   border:1px solid rgba(255,255,255,0.05);
   transition:0.5s;
-  animation:float 6s ease-in-out infinite;
+  animation:float 3.5s ease-in-out infinite;
 }
-.card:nth-child(2){animation-delay:1s;}
-.card:nth-child(3){animation-delay:2s;}
+
 @keyframes float{
   0%,100%{transform:translateY(0);}
   50%{transform:translateY(-12px);}
 }
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:20px;
-  padding:1px;
-  background:linear-gradient(120deg,#ff2e93,#ff4da6,#ff2e93);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity:0.7;
-}
-.card::after{
-  content:"";
-  position:absolute;
-  width:150%;
-  height:150%;
-  background:radial-gradient(circle, rgba(255,0,128,0.25), transparent 70%);
-  top:-30%;
-  left:-20%;
-  opacity:0;
-  transition:0.5s;
-}
+
 .card:hover{
   transform:translateY(-15px) scale(1.05);
-  box-shadow:0 0 40px rgba(255,0,128,0.5);
 }
-.card:hover::after{
-  opacity:1;
-}
+
 .icon{
   font-size:34px;
   margin-bottom:15px;
   color:#ff4da6;
-  text-shadow:0 0 15px rgba(255,0,128,0.7);
-}
-.card h3{
-  margin-bottom:10px;
-  color:#fff;
-}
-.card p{
-  color:#bbb;
-  font-size:15px;
 }
 
 /* PLANOS */
 .planos{margin-top:130px;}
-.planos h2{font-size:34px;margin-bottom:40px;}
+
 .plans{
   display:flex;
   gap:25px;
   flex-wrap:wrap;
   justify-content:center;
 }
+
 .plan{
-  position:relative;
   background:rgba(20, 0, 15, 0.85);
   padding:35px;
   border-radius:20px;
   width:300px;
-  border:1px solid rgba(255,255,255,0.05);
   transition:0.4s;
-  overflow:hidden;
-  box-shadow:0 0 15px rgba(255,0,128,0.15),0 0 30px rgba(255,0,128,0.08);
 }
-.plan::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:20px;
-  padding:1px;
-  background:linear-gradient(120deg,#ff2e93,#ff4da6,#ff2e93);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity:0.7;
-}
-.plan::after{
-  content:"";
-  position:absolute;
-  width:140%;
-  height:140%;
-  background:radial-gradient(circle, rgba(255,0,128,0.12), transparent 70%);
-  top:-20%;
-  left:-20%;
-  opacity:1;
-}
+
 .plan:hover{
   transform:translateY(-10px) scale(1.04);
-  box-shadow:0 0 30px rgba(255,0,128,0.4),0 0 60px rgba(255,0,128,0.2);
 }
-.highlight{
-  border:2px solid #ff4da6;
-  box-shadow:0 0 25px rgba(255,0,128,0.4),0 0 60px rgba(255,0,128,0.25);
-}
+
 .price{
   font-size:36px;
   color:#ff4da6;
   margin:20px 0;
 }
-.plan ul{list-style:none;text-align:left;margin-top:20px;}
-.plan ul li{margin:8px 0;color:#bbb;}
-.tag{color:#ff4da6;font-size:14px;}
 
 /* FINAL */
 .final{
-  position:relative;
   margin-top:150px;
   padding:90px 20px;
   border-radius:25px;
-  background:radial-gradient(circle at center, rgba(255,0,128,0.15), #0a0005 70%);
-  overflow:hidden;
-}
-.final::before{
-  content:"";
-  position:absolute;
-  width:200%;
-  height:200%;
-  background:radial-gradient(circle, rgba(255,0,128,0.08), transparent 70%);
-  top:-50%;
-  left:-50%;
-  animation:pulse 6s infinite ease-in-out;
-}
-@keyframes pulse{0%,100%{opacity:0.4;}50%{opacity:1;}}
-.final h2{
-  font-size:34px;
-  margin-bottom:15px;
-  background:linear-gradient(90deg,#fff,#ff4da6);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.final p{color:#bbb;margin-bottom:30px;font-size:16px;}
-.final .btn{
-  padding:18px 50px;
-  font-size:18px;
-  box-shadow:0 0 25px rgba(255,0,128,0.5);
-}
-.final .btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 40px rgba(255,0,128,0.8);
 }
 
-/* WHATSAPP */
+.final::before{
+  animation:pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:0.4;}
+  50%{opacity:1;}
+}
+
+/* WHATS */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -323,19 +216,19 @@ body::before{
   color:white;
   text-decoration:none;
 }
+
 </style>
 </head>
+
 <body>
+
 <div class="container">
 
-<!-- LOGO DESTACADA -->
 <div class="logo-container">
-  <img src="file_000000008e7c71f58da6ed9ebadc5cb2.png" class="logo-big" alt="Raquel Frisson">
-
+  <img src="file_000000008e7c71f58da6ed9ebadc5cb2.png" class="logo-big">
   <p class="slogan">Foco em Resultados: transformando suor em conquistas e disciplina em liberdade.</p>
 </div>
 
-<!-- HERO -->
 <div class="hero animated-hero">
   <h1>Recupere seu corpo e sua <span>confiança</span> com estratégia.</h1>
   <p>Emagrecimento ou hipertrofia.<br>Treinos inteligentes para resultados reais em Duque de Caxias.</p>
@@ -343,40 +236,43 @@ body::before{
   <p class="sub-info">Atendimento personalizado • Vagas limitadas</p>
 </div>
 
-<!-- BENEFÍCIOS -->
 <div class="cards">
-  <div class="card"><div class="icon">🏋️</div><h3>Treino Personalizado</h3><p>Estratégia ajustada ao seu nível e objetivo.</p></div>
-  <div class="card"><div class="icon">📈</div><h3>Evolução Contínua</h3><p>Seu treino evolui conforme seus resultados.</p></div>
-  <div class="card"><div class="icon">📲</div><h3>Acompanhamento</h3><p>Suporte direto durante toda sua jornada.</p></div>
+  <div class="card"><div class="icon">🏋️</div><h3>Treino Personalizado</h3></div>
+  <div class="card"><div class="icon">📈</div><h3>Evolução Contínua</h3></div>
+  <div class="card"><div class="icon">📲</div><h3>Acompanhamento</h3></div>
 </div>
 
-<!-- PLANOS -->
 <div class="planos">
   <h2>Escolha seu plano</h2>
   <div class="plans">
-    <div class="plan"><h3>3x por semana</h3><div class="price">R$450/mês</div>
-      <ul><li>✔ Treino personalizado</li><li>✔ Ajustes conforme evolução</li><li>✔ Suporte</li></ul>
+    <div class="plan">
+      <h3>3x por semana</h3>
+      <div class="price">R$450/mês</div>
       <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
     </div>
-    <div class="plan highlight"><h3>5x por semana</h3><p class="tag">Mais escolhido</p><div class="price">R$600/mês</div>
-      <ul><li>✔ Treino avançado</li><li>✔ Ajustes frequentes</li><li>✔ Acompanhamento mais próximo</li></ul>
+
+    <div class="plan">
+      <h3>5x por semana</h3>
+      <div class="price">R$600/mês</div>
       <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
     </div>
-    <div class="plan"><h3>Consultoria Online</h3><div class="price">R$197/mês</div>
-      <ul><li>✔ Treino personalizado</li><li>✔ Atualizações periódicas</li><li>✔ Suporte online</li></ul>
+
+    <div class="plan">
+      <h3>Consultoria Online</h3>
+      <div class="price">R$197/mês</div>
       <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
     </div>
   </div>
 </div>
 
-<!-- FINAL -->
 <div class="final">
   <h2>Você pode continuar igual... ou mudar agora.</h2>
-  <p>Os resultados começam na decisão.<br>E você já sabe o que precisa fazer.</p>
   <a href="https://wa.me/5521994853154" class="btn">Quero começar agora</a>
 </div>
 
 </div>
+
 <a href="https://wa.me/5521994853154" class="whatsapp">💬</a>
+
 </body>
-  </html>
+                      </html>
