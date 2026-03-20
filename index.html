@@ -43,23 +43,36 @@ body::before{
   text-align:center;
 }
 
-/* TOPO AJUSTADO */
+/* LOGO CONTAINER AJUSTADO */
 .logo-container{
   position: relative;
-  padding-top: 60px;
-  padding-bottom: 80px;
+  padding-top: 70px;
+  padding-bottom: 100px;
   text-align: center;
   z-index:2;
 }
 
-/* LOGO */
+/* LOGO EM DESTAQUE */
 .logo-big{
-  width:1200px;
+  width:1300px;
   max-width:95%;
   animation:logoFadeIn 0.6s ease forwards, logoGlow 1.2s infinite alternate;
   opacity:1;
-  margin:0 auto 30px auto;
+  margin:0 auto 40px auto;
   display:block;
+  position: relative;
+}
+
+/* PERSONAL TRAINER */
+.personal-trainer{
+  font-size:22px;
+  font-weight:700;
+  color:#ff77b3;
+  margin-bottom:20px;
+  text-shadow: 0 0 10px rgba(255,77,166,0.7);
+  letter-spacing: 2px;
+  text-align: center;
+  z-index:2;
 }
 
 /* SLOGAN */
@@ -67,7 +80,7 @@ body::before{
   font-size:18px;
   font-weight:600;
   color:#ff4da6;
-  margin-bottom:70px;
+  margin-bottom:90px;
 }
 
 /* HERO */
@@ -75,7 +88,7 @@ body::before{
   opacity:0;
   transform:translateY(50px);
   animation:heroEnter 0.6s ease forwards 0.4s;
-  margin-top:40px;
+  margin-top:50px;
 }
 
 @keyframes heroEnter{
@@ -83,7 +96,7 @@ body::before{
   100%{opacity:1; transform:translateY(0);}
 }
 
-/* TEXTO HERO */
+/* HERO TEXTO */
 .hero h1{
   font-size:30px;
   font-weight:100;
@@ -117,13 +130,14 @@ body::before{
   box-shadow:0 0 25px rgba(255,0,128,0.6);
 }
 
+/* SUB INFO */
 .sub-info{
   margin-top:15px;
   font-size:14px;
   color:#888;
 }
 
-/* CARDS */
+/* BENEFÍCIOS */
 .cards{
   position:relative;
   display:flex;
@@ -133,6 +147,7 @@ body::before{
   justify-content:center;
 }
 
+/* CARDS */
 .card{
   position:relative;
   background:rgba(15, 0, 10, 0.7);
@@ -162,7 +177,6 @@ body::before{
 
 /* PLANOS */
 .planos{margin-top:130px;}
-
 .plans{
   display:flex;
   gap:25px;
@@ -204,7 +218,7 @@ body::before{
   50%{opacity:1;}
 }
 
-/* WHATS */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:20px;
@@ -224,49 +238,56 @@ body::before{
 
 <div class="container">
 
+<!-- LOGO -->
 <div class="logo-container">
-  <img src="file_000000008e7c71f58da6ed9ebadc5cb2.png" class="logo-big">
+  <img src="file_000000008e7c71f58da6ed9ebadc5cb2.png" class="logo-big" alt="Raquel Frisson">
   <p class="slogan">Foco em Resultados: transformando suor em conquistas e disciplina em liberdade.</p>
 </div>
 
+<!-- HERO -->
 <div class="hero animated-hero">
   <h1>Recupere seu corpo e sua <span>confiança</span> com estratégia.</h1>
-  <p>Emagrecimento ou hipertrofia.<br>Treinos inteligentes para resultados reais em Duque de Caxias.</p>
+
+  <!-- BOTÃO SUBIU -->
   <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
+
+  <p>Emagrecimento ou hipertrofia.<br>Treinos inteligentes para resultados reais em Duque de Caxias.</p>
+
   <p class="sub-info">Atendimento personalizado • Vagas limitadas</p>
 </div>
 
+<!-- BENEFÍCIOS -->
 <div class="cards">
-  <div class="card"><div class="icon">🏋️</div><h3>Treino Personalizado</h3></div>
-  <div class="card"><div class="icon">📈</div><h3>Evolução Contínua</h3></div>
-  <div class="card"><div class="icon">📲</div><h3>Acompanhamento</h3></div>
+  <div class="card"><div class="icon">🏋️</div><h3>Treino Personalizado</h3><p>Estratégia ajustada ao seu nível e objetivo.</p></div>
+  <div class="card"><div class="icon">📈</div><h3>Evolução Contínua</h3><p>Seu treino evolui conforme seus resultados.</p></div>
+  <div class="card"><div class="icon">📲</div><h3>Acompanhamento</h3><p>Suporte direto durante toda sua jornada.</p></div>
 </div>
 
+<!-- PLANOS -->
 <div class="planos">
   <h2>Escolha seu plano</h2>
   <div class="plans">
-    <div class="plan">
-      <h3>3x por semana</h3>
-      <div class="price">R$450/mês</div>
+    <div class="plan"><h3>3x por semana</h3><div class="price">R$450/mês</div>
+      <ul><li>✔ Treino personalizado</li><li>✔ Ajustes conforme evolução</li><li>✔ Suporte</li></ul>
       <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
     </div>
 
-    <div class="plan">
-      <h3>5x por semana</h3>
-      <div class="price">R$600/mês</div>
+    <div class="plan highlight"><h3>5x por semana</h3><p class="tag">Mais escolhido</p><div class="price">R$600/mês</div>
+      <ul><li>✔ Treino avançado</li><li>✔ Ajustes frequentes</li><li>✔ Acompanhamento mais próximo</li></ul>
       <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
     </div>
 
-    <div class="plan">
-      <h3>Consultoria Online</h3>
-      <div class="price">R$197/mês</div>
+    <div class="plan"><h3>Consultoria Online</h3><div class="price">R$197/mês</div>
+      <ul><li>✔ Treino personalizado</li><li>✔ Atualizações periódicas</li><li>✔ Suporte online</li></ul>
       <a href="https://wa.me/5521994853154" class="btn">Começar agora</a>
     </div>
   </div>
 </div>
 
+<!-- FINAL -->
 <div class="final">
   <h2>Você pode continuar igual... ou mudar agora.</h2>
+  <p>Os resultados começam na decisão.<br>E você já sabe o que precisa fazer.</p>
   <a href="https://wa.me/5521994853154" class="btn">Quero começar agora</a>
 </div>
 
@@ -275,4 +296,4 @@ body::before{
 <a href="https://wa.me/5521994853154" class="whatsapp">💬</a>
 
 </body>
-                      </html>
+  </html>
