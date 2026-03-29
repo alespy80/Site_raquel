@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;
 .hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
 
 .hero-logo{
-  width:min(280px,70vw);
+  width:min(300px,70vw);
   margin-bottom:1.5rem;
   filter:drop-shadow(0 0 30px rgba(233,30,140,.5));
   animation:logoIn 1.2s ease forwards;
