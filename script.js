@@ -1,20 +1,41 @@
-// Animação de entrada ao rolar
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
+// Nav scroll
+window.addEventListener("scroll", () => {
+  document.getElementById("nav").style.boxShadow =
+    window.scrollY > 20 ? "0 4px 30px rgba(0,0,0,.7)" : "none";
+});
+
+// Menu mobile
+document.getElementById("nav-toggle").addEventListener("click", () => {
+  document.getElementById("nav-mobile").classList.toggle("aberto");
+});
+document.querySelectorAll(".nav-mobile a").forEach(a => {
+  a.addEventListener("click", () => document.getElementById("nav-mobile").classList.remove("aberto"));
+});
+
+// Animação de entrada nos cards
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
     if (e.isIntersecting) {
-      e.target.classList.add("visible");
-      observer.unobserve(e.target);
+      setTimeout(() => {
+        e.target.style.opacity = "1";
+        e.target.style.transform = "translateY(0)";
+      }, i * 100);
+      obs.unobserve(e.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
-document.querySelectorAll([
-  ".cap-titulo", ".frase-grande", ".destaque-box", ".citacao",
-  ".texto-bloco", ".lista-inimigos", ".dualidade", ".codigo-conduta",
-  ".acoes-disciplina", ".trio-conquista", ".corpo-grid", ".enquanto-grid",
-  ".rotina-steps", ".identidade", ".construcao-lista", ".nao-nao-nao",
-  ".melhor-ontem", ".cap-label", ".corpo-item", ".enq-item"
-].join(",")).forEach(el => {
-  el.classList.add("fade-in");
-  observer.observe(el);
+document.querySelectorAll(".card-ben, .plano").forEach(el => {
+  el.style.opacity = "0";
+  el.style.transform = "translateY(24px)";
+  el.style.transition = "opacity .6s ease, transform .6s ease";
+  obs.observe(el);
 });
+
+// Fallback mobile
+setTimeout(() => {
+  document.querySelectorAll(".card-ben, .plano").forEach(el => {
+    el.style.opacity = "1";
+    el.style.transform = "translateY(0)";
+  });
+}, 1000);
