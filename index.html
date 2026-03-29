@@ -1,399 +1,176 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raquel Frisson</title>
-<style>
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Segoe UI', Arial, sans-serif;
-  color:#f5f5f5;
-  overflow-x:hidden;
-  background: radial-gradient(circle at top, #0a0206 0%, #050003 60%, #000000 100%);
-}
-
-/* PARTÍCULAS / GLITTER */
-body::before{
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255,0,128,0.25) 1px, transparent 1px);
-  background-size:100px 100px, 160px 160px;
-  animation:particles 18s linear infinite;
-  z-index:-1;
-  opacity:0.6;
-}
-@keyframes particles{
-  from{transform:translateY(0);}
-  to{transform:translateY(-120px);}
-}
-
-/* CONTAINER */
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:20px;
-  text-align:center;
-}
-
-/* LOGO CONTAINER */
-.logo-container{
-  position: relative;
-  padding-top: 30px;
-  padding-bottom: 40px;
-  text-align: center;
-  z-index:2;
-}
-
-.logo-big{
-  width:100%;
-  max-width:750px;
-  animation:logoFadeIn 1.8s ease forwards, logoGlow 2.5s infinite alternate;
-  opacity:1;
-  margin:0 auto 10px auto;
-  display:block;
-}
-
-/* PERSONAL TRAINER */
-.personal-trainer{
-  font-size:22px;
-  font-weight:700;
-  color:#ff77b3;
-  margin-bottom:20px;
-  text-shadow: 0 0 10px rgba(255,77,166,0.7);
-  letter-spacing: 2px;
-  text-align: center;
-  z-index:2;
-}
-
-/* SLOGAN */
-.slogan{
-  font-size:18px;
-  font-weight:600;
-  color:#ff4da6;
-  margin-bottom:40px;
-}
-
-/* HERO CINEMATOGRÁFICO */
-.animated-hero{
-  opacity:0;
-  transform:translateY(50px);
-  margin-top:20px;
-  animation:heroEnter 1.5s ease forwards 2.2s;
-}
-@keyframes heroEnter{
-  0%{opacity:0; transform:translateY(40px);}
-  100%{opacity:1; transform:translateY(0);}
-}
-
-/* HERO */
-.hero h1{
-  font-size:30px;
-  font-weight:100;
-  line-height:1.3;
-}
-.hero span{
-  color:#ff4da6;
-  font-weight:600;
-}
-.hero p{
-  margin-top:20px;
-  font-size:18px;
-  color:#cfcfcf;
-  line-height:1.6;
-}
-
-/* BOTÃO */
-.btn{
-  display:inline-block;
-  margin-top:35px;
-  padding:16px 40px;
-  background:linear-gradient(45deg,#ff2e93,#ff4da6);
-  border-radius:10px;
-  font-weight:600;
-  text-decoration:none;
-  color:white;
-  transition:0.3s;
-  position: relative;
-  z-index:10;
-}
-.btn:hover{
-  transform:translateY(-2px) scale(1.05);
-  box-shadow:0 0 25px rgba(255,0,128,0.6);
-}
-
-/* SUB INFO */
-.sub-info{
-  margin-top:15px;
-  font-size:14px;
-  color:#888;
-}
-
-/* BENEFÍCIOS */
-.cards{
-  position:relative;
-  display:flex;
-  gap:40px;
-  margin-top:90px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.cards::before{
-  content:"";
-  position:absolute;
-  top:50%;
-  left:10%;
-  width:80%;
-  height:2px;
-  background:linear-gradient(90deg, transparent, #ff2e93, transparent);
-  opacity:0.3;
-}
-.card{
-  position:relative;
-  background:rgba(15, 0, 10, 0.7);
-  padding:35px 25px;
-  border-radius:20px;
-  width:280px;
-  overflow:hidden;
-  backdrop-filter: blur(10px);
-  border:1px solid rgba(255,255,255,0.05);
-  transition:0.5s;
-  animation:float 6s ease-in-out infinite;
-}
-.card:nth-child(2){animation-delay:1s;}
-.card:nth-child(3){animation-delay:2s;}
-@keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-12px);}
-}
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:20px;
-  padding:1px;
-  background:linear-gradient(120deg,#ff2e93,#ff4da6,#ff2e93);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity:0.7;
-}
-.card::after{
-  content:"";
-  position:absolute;
-  width:150%;
-  height:150%;
-  background:radial-gradient(circle, rgba(255,0,128,0.25), transparent 70%);
-  top:-30%;
-  left:-20%;
-  opacity:0;
-  transition:0.5s;
-}
-.card:hover{
-  transform:translateY(-15px) scale(1.05);
-  box-shadow:0 0 40px rgba(255,0,128,0.5);
-}
-.card:hover::after{
-  opacity:1;
-}
-.icon{
-  font-size:34px;
-  margin-bottom:15px;
-  color:#ff4da6;
-  text-shadow:0 0 15px rgba(255,0,128,0.7);
-}
-.card h3{
-  margin-bottom:10px;
-  color:#fff;
-}
-.card p{
-  color:#bbb;
-  font-size:15px;
-}
-
-/* PLANOS */
-.planos{margin-top:130px;}
-.planos h2{font-size:34px;margin-bottom:40px;}
-.plans{
-  display:flex;
-  gap:25px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.plan{
-  position:relative;
-  background:rgba(20, 0, 15, 0.85);
-  padding:35px;
-  border-radius:20px;
-  width:300px;
-  border:1px solid rgba(255,255,255,0.05);
-  transition:0.4s;
-  overflow:hidden;
-  box-shadow:0 0 15px rgba(255,0,128,0.15),0 0 30px rgba(255,0,128,0.08);
-}
-.plan::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:20px;
-  padding:1px;
-  background:linear-gradient(120deg,#ff2e93,#ff4da6,#ff2e93);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity:0.7;
-}
-.plan::after{
-  content:"";
-  position:absolute;
-  width:140%;
-  height:140%;
-  background:radial-gradient(circle, rgba(255,0,128,0.12), transparent 70%);
-  top:-20%;
-  left:-20%;
-  opacity:1;
-}
-.plan:hover{
-  transform:translateY(-10px) scale(1.04);
-  box-shadow:0 0 30px rgba(255,0,128,0.4),0 0 60px rgba(255,0,128,0.2);
-}
-.highlight{
-  border:2px solid #ff4da6;
-  box-shadow:0 0 25px rgba(255,0,128,0.4),0 0 60px rgba(255,0,128,0.25);
-}
-.price{
-  font-size:36px;
-  color:#ff4da6;
-  margin:20px 0;
-}
-.plan ul{list-style:none;text-align:left;margin-top:20px;}
-.plan ul li{margin:8px 0;color:#bbb;}
-.tag{color:#ff4da6;font-size:14px;}
-
-/* FINAL */
-.final{
-  position:relative;
-  margin-top:150px;
-  padding:90px 20px;
-  border-radius:25px;
-  background:radial-gradient(circle at center, rgba(255,0,128,0.15), #0a0005 70%);
-  overflow:hidden;
-}
-.final::before{
-  content:"";
-  position:absolute;
-  width:200%;
-  height:200%;
-  background:radial-gradient(circle, rgba(255,0,128,0.08), transparent 70%);
-  top:-50%;
-  left:-50%;
-  animation:pulse 6s infinite ease-in-out;
-}
-@keyframes pulse{0%,100%{opacity:0.4;}50%{opacity:1;}}
-.final h2{
-  font-size:34px;
-  margin-bottom:15px;
-  background:linear-gradient(90deg,#fff,#ff4da6);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.final p{color:#bbb;margin-bottom:30px;font-size:16px;}
-.final .btn{
-  padding:18px 50px;
-  font-size:18px;
-  box-shadow:0 0 25px rgba(255,0,128,0.5);
-}
-.final .btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 40px rgba(255,0,128,0.8);
-}
-
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:15px 18px;
-  border-radius:50%;
-  font-size:22px;
-  color:white;
-  text-decoration:none;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raquel Frisson — Personal Trainer</title>
+  <meta name="description" content="Treinos personalizados com foco em resultados reais. Emagrecimento, hipertrofia e confiança." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
 
-<div class="logo-container">
-  <img src="file_000000008e7c71f58da6ed9ebadc5cb2.png" class="logo-big" alt="Raquel Frisson">
-  <p class="slogan">Foco em Resultados: transformando suor em conquistas e disciplina em liberdade.</p>
-</div>
+  <div class="particles"></div>
 
-<div class="hero animated-hero">
-  <h1>Recupere seu corpo e sua <span>confiança</span> com estratégia.</h1>
-  <p>Emagrecimento ou hipertrofia.<br>Treinos inteligentes para resultados reais.</p>
-  <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%203x%20por%20semana" class="btn">Começar agora</a>
-  <p class="sub-info">Atendimento personalizado • Vagas limitadas</p>
-</div>
-
-<div class="cards">
-  <div class="card"><div class="icon">🏋️</div><h3>Treino Personalizado</h3><p>Estratégia ajustada ao seu nível e objetivo.</p></div>
-  <div class="card"><div class="icon">📈</div><h3>Evolução Contínua</h3><p>Seu treino evolui conforme seus resultados.</p></div>
-  <div class="card"><div class="icon">📲</div><h3>Acompanhamento</h3><p>Suporte direto durante toda sua jornada.</p></div>
-</div>
-
-<div class="planos">
-  <h2>Escolha seu plano</h2>
-  <div class="plans">
-    <div class="plan">
-      <h3>3x por semana</h3>
-      <div class="price">R$450/mês</div>
-      <ul>
-        <li>✔ Treino personalizado</li>
-        <li>✔ Ajustes conforme evolução</li>
-        <li>✔ Suporte</li>
-      </ul>
-      <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%203x%20por%20semana" class="btn">Começar agora</a>
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">Raquel <span>Frisson</span></div>
+      <div class="nav-links">
+        <a href="#beneficios">Método</a>
+        <a href="#planos">Planos</a>
+        <a href="https://wa.me/5521994853154" class="nav-cta">Falar agora</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="plan highlight">
-      <h3>5x por semana</h3>
-      <p class="tag">Mais escolhido</p>
-      <div class="price">R$600/mês</div>
-      <ul>
-        <li>✔ Treino avançado</li>
-        <li>✔ Ajustes frequentes</li>
-        <li>✔ Acompanhamento mais próximo</li>
-      </ul>
-      <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%205x%20por%20semana" class="btn">Começar agora</a>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#beneficios">Método</a>
+      <a href="#planos">Planos</a>
+      <a href="https://wa.me/5521994853154">Falar agora</a>
     </div>
-    <div class="plan">
-      <h3>Consultoria Online</h3>
-      <div class="price">R$197/mês</div>
-      <ul>
-        <li>✔ Treino personalizado</li>
-        <li>✔ Atualizações periódicas</li>
-        <li>✔ Suporte online</li>
-      </ul>
-      <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%20Consultoria%20Online" class="btn">Começar agora</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <img src="file_000000008e7c71f58da6ed9ebadc5cb2.png" class="hero-logo" alt="Raquel Frisson" />
+      <div class="hero-badge">Personal Trainer</div>
+      <h1 class="hero-titulo">
+        Recupere seu corpo<br>e sua <span>confiança</span><br>com estratégia.
+      </h1>
+      <p class="hero-sub">Emagrecimento ou hipertrofia. Treinos inteligentes para resultados reais.</p>
+      <p class="hero-slogan">Foco em Resultados: transformando suor em conquistas e disciplina em liberdade.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20treino%20personalizado" class="btn-prim">
+          Começar agora
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#planos" class="btn-sec">Ver planos</a>
+      </div>
+      <p class="hero-aviso">Atendimento personalizado • Vagas limitadas</p>
     </div>
-  </div>
-</div>
+    <div class="hero-scroll">role para baixo</div>
+  </header>
 
-<div class="final">
-  <h2>Você pode continuar igual... ou mudar agora.</h2>
-  <p>Os resultados começam na decisão.<br>E você já sabe o que precisa fazer.</p>
-  <a href="https://wa.me/5521994853154" class="btn">Quero começar agora</a>
-</div>
+  <!-- BENEFÍCIOS -->
+  <section class="secao" id="beneficios">
+    <div class="container">
+      <div class="sec-label">O Método</div>
+      <h2 class="sec-titulo">Treino que evolui<br>com você</h2>
+      <div class="cards-grid">
+        <div class="card-ben">
+          <div class="card-icone">🏋️</div>
+          <h3>Treino Personalizado</h3>
+          <p>Estratégia ajustada ao seu nível, objetivo e rotina. Nada genérico.</p>
+        </div>
+        <div class="card-ben card-dest">
+          <div class="card-icone">📈</div>
+          <h3>Evolução Contínua</h3>
+          <p>Seu treino evolui conforme seus resultados. Sem estagnação.</p>
+        </div>
+        <div class="card-ben">
+          <div class="card-icone">📲</div>
+          <h3>Acompanhamento</h3>
+          <p>Suporte direto durante toda sua jornada. Você não está sozinha.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <!-- PLANOS -->
+  <section class="secao secao-dark" id="planos">
+    <div class="container">
+      <div class="sec-label">Investimento</div>
+      <h2 class="sec-titulo">Escolha seu plano</h2>
+      <p class="sec-sub">Todos os planos incluem treino personalizado e acompanhamento direto.</p>
+      <div class="planos-grid">
 
-<a href="https://wa.me/5521994853154" class="whatsapp">💬</a>
+        <div class="plano">
+          <div class="plano-header">
+            <div class="plano-titulo">Presencial</div>
+            <div class="plano-freq">3x por semana</div>
+          </div>
+          <div class="plano-preco">R$ 450<span>/mês</span></div>
+          <ul class="plano-lista">
+            <li>Treino personalizado</li>
+            <li>Ajustes conforme evolução</li>
+            <li>Suporte direto</li>
+          </ul>
+          <a class="btn-plano" href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%203x%20por%20semana">
+            Começar agora
+          </a>
+        </div>
 
+        <div class="plano plano-dest">
+          <div class="plano-badge">⭐ Mais escolhido</div>
+          <div class="plano-header">
+            <div class="plano-titulo">Presencial</div>
+            <div class="plano-freq">5x por semana</div>
+          </div>
+          <div class="plano-preco">R$ 600<span>/mês</span></div>
+          <ul class="plano-lista">
+            <li>Treino avançado</li>
+            <li>Ajustes frequentes</li>
+            <li>Acompanhamento mais próximo</li>
+          </ul>
+          <a class="btn-plano btn-plano-dest" href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20plano%205x%20por%20semana">
+            Começar agora
+          </a>
+        </div>
+
+        <div class="plano">
+          <div class="plano-header">
+            <div class="plano-titulo">Online</div>
+            <div class="plano-freq">💻 Consultoria</div>
+          </div>
+          <div class="plano-preco">R$ 197<span>/mês</span></div>
+          <ul class="plano-lista">
+            <li>Treino personalizado</li>
+            <li>Atualizações periódicas</li>
+            <li>Suporte online</li>
+          </ul>
+          <a class="btn-plano" href="https://wa.me/5521994853154?text=Olá!%20Quero%20saber%20mais%20sobre%20a%20Consultoria%20Online">
+            Começar agora
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="container container-center">
+      <h2 class="cta-titulo">Você pode continuar igual...<br><span>ou mudar agora.</span></h2>
+      <p class="cta-sub">Os resultados começam na decisão.<br>E você já sabe o que precisa fazer.</p>
+      <a href="https://wa.me/5521994853154" class="btn-prim btn-grande" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero começar agora
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">Raquel <span>Frisson</span></div>
+      <p>Personal Trainer • Resultados Reais</p>
+      <div class="footer-contato">
+        <a href="https://wa.me/5521994853154">📲 (21) 99485-3154</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a class="whatsapp-float" href="https://wa.me/5521994853154" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="app.js"></script>
 </body>
-  </html>
+</html>
